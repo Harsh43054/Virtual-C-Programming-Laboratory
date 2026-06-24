@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arrays and Strings in C++ Explorer</title>
+<link rel="stylesheet" href="simulation.css">
+
+<style>
+.layer{
+padding:14px;
+margin:8px 0;
+border:2px solid #4a90e2;
+border-radius:8px;
+text-align:center;
+transition:.3s;
+}
+
+.layer.active{
+background:#4a90e2;
+color:white;
+transform:scale(1.03);
+}
+
+#steps pre.active{
+background:#fff3cd;
+border-left:5px solid orange;
+}
+
+.array-box{
+display:flex;
+justify-content:center;
+gap:8px;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
+.cell{
+width:60px;
+height:60px;
+line-height:60px;
+border:2px solid #4a90e2;
+font-weight:bold;
+border-radius:8px;
+background:white;
+}
+
+.cell.active{
+background:#4a90e2;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+Arrays and Strings in C++ Explorer
+</div>
+
+<div class="main-container">
+
+<div class="panel problem-panel">
+
+<div class="panel-header">
+Select Concept
+</div>
+
+<div class="panel-body">
+
+<select id="concept">
+<option value="">--Select Concept--</option>
+<option value="array">Array Traversal</option>
+<option value="search">Array Searching</option>
+<option value="update">Array Update</option>
+<option value="string">String Traversal</option>
+<option value="concat">String Concatenation</option>
+</select>
+
+<div class="button-row">
+<button class="start" onclick="start()">Start</button>
+<button class="next" onclick="nextStep()">Next</button>
+<button class="reset" onclick="resetSim()">Reset</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="panel step-panel">
+<div class="panel-header">
+Step Execute
+</div>
+
+<div class="panel-body" id="steps">
+</div>
+</div>
+
+<div class="panel result-panel">
+
+<div class="panel-header">
+Visualization
+</div>
+
+<div class="panel-body">
+
+<div class="layer" id="l-array">
+Array Traversal
+</div>
+
+<div class="layer" id="l-search">
+Array Searching
+</div>
+
+<div class="layer" id="l-update">
+Array Update
+</div>
+
+<div class="layer" id="l-string">
+String Traversal
+</div>
+
+<div class="layer" id="l-concat">
+String Concatenation
+</div>
+
+<div class="array-box" id="visualBox">
+<div class="cell" id="c0">10</div>
+<div class="cell" id="c1">20</div>
+<div class="cell" id="c2">30</div>
+<div class="cell" id="c3">40</div>
+<div class="cell" id="c4">50</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="ssc.js"></script>
+
+</body>
+</html>
