@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>C++ Input, Output and Data Types Explorer</title>
+<link rel="stylesheet" href="simulation.css">
+
+<style>
+.layer{
+    padding:14px;
+    margin:8px 0;
+    border-radius:10px;
+    text-align:center;
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.layer.active{
+    background:linear-gradient(135deg,#4a90e2,#6dd5ed);
+    color:white;
+    transform:translateY(-3px);
+}
+
+#steps pre{
+    background:#f8f9fa;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:8px;
+}
+
+#steps pre.active{
+    background:#fff3cd;
+    border-left:5px solid orange;
+}
+
+.progress-container{
+    width:100%;
+    background:#e5e5e5;
+    border-radius:20px;
+    margin-top:15px;
+}
+
+#progressBar{
+    width:0%;
+    height:12px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#4a90e2,#6dd5ed);
+    transition:.4s;
+}
+
+#infoBox{
+    margin-top:12px;
+    padding:12px;
+    background:#eef6ff;
+    border-left:4px solid #4a90e2;
+    border-radius:8px;
+}
+
+#codePreview{
+    background:#1e1e1e;
+    color:#00ff66;
+    padding:12px;
+    border-radius:8px;
+    margin-top:10px;
+    overflow:auto;
+}
+
+#badgeArea{
+    margin-top:12px;
+    font-weight:bold;
+    color:green;
+    font-size:18px;
+}
+
+#quizArea{
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    C++ Input, Output and Data Types Explorer
+</div>
+
+<div class="main-container">
+
+    <div class="panel problem-panel">
+        <div class="panel-header">Select Concept</div>
+
+        <div class="panel-body">
+
+            <select id="component">
+                <option value="">--Select Concept--</option>
+                <option value="datatype">Data Types</option>
+                <option value="variable">Variable Declaration</option>
+                <option value="input">Input using cin</option>
+                <option value="output">Output using cout</option>
+                <option value="execution">Program Execution</option>
+            </select>
+
+            <div class="button-row">
+                <button class="start" onclick="start()">Start</button>
+                <button class="next" onclick="nextStep()">Next</button>
+                <button class="reset" onclick="resetSim()">Reset</button>
+            </div>
+
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel step-panel">
+        <div class="panel-header">Step Execute</div>
+
+        <div class="panel-body">
+
+            <div id="steps"></div>
+
+            <div id="infoBox">
+                Select a concept and click Start.
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel result-panel">
+        <div class="panel-header">Program Visualization</div>
+
+        <div class="panel-body">
+
+            <div class="layer" id="l-datatype">
+                Data Types (int, float, char)
+            </div>
+
+            <div class="layer" id="l-variable">
+                Variable Declaration
+            </div>
+
+            <div class="layer" id="l-input">
+                Input using cin
+            </div>
+
+            <div class="layer" id="l-output">
+                Output using cout
+            </div>
+
+            <div class="layer" id="l-execution">
+                Program Execution
+            </div>
+
+        </div>
+
+        <div class="panel-header" style="margin-top:15px;">
+            Live Code Preview
+        </div>
+
+        <div id="codePreview">
+<pre id="previewCode">
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age;
+
+    cin >> age;
+
+    cout << age;
+
+    return 0;
+}
+</pre>
+        </div>
+
+        <div id="badgeArea"></div>
+
+        <div id="quizArea"></div>
+
+    </div>
+
+</div>
+
+<script src="ssc.js"></script>
+
+</body>
+</html>
