@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classes and Objects in C++ Simulator</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    margin:20px;
+}
+
+h1{
+    text-align:center;
+    color:#2c3e50;
+}
+
+.section{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.controls{
+    text-align:center;
+    margin:15px 0;
+}
+
+button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    color:white;
+}
+
+.start{background:#28a745;}
+.next{background:#007bff;}
+.reset{background:#dc3545;}
+
+pre{
+    background:#f8f9fa;
+    padding:10px;
+    border-left:4px solid #ccc;
+    border-radius:5px;
+}
+
+.active{
+    border-left:4px solid #28a745;
+    background:#e8f5e9;
+}
+
+#result{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<h1>Classes and Objects in C++ Simulator</h1>
+
+<div class="section">
+<h2>Simulation</h2>
+
+<div class="controls">
+<button class="start" onclick="start()">Start</button>
+<button class="next" onclick="nextStep()">Next</button>
+<button class="reset" onclick="resetSim()">Reset</button>
+</div>
+
+<div id="steps"></div>
+</div>
+
+<div id="result">
+<strong>Output :</strong> Click Start to begin the simulation.
+</div>
+
+<script>
+let steps = [];
+let currentStep = 0;
+
+window.onload = () => {
+  document.querySelector(".next").disabled = true;
+  document.querySelector(".reset").disabled = true;
+};
+
+function start() {
+
+  steps = [
+    "Class Declaration: class Student { ... };",
+    "Data Members Added: string name; int rollNo;",
+    "Member Function Added: display();",
+    "Object Created: Student s1;",
+    "Values Assigned: s1.name = 'Rahul', s1.rollNo = 101;",
+    "Calling Member Function: s1.display();",
+    "Output Generated: Name = Rahul, Roll No = 101",
+    "Simulation Completed Successfully."
+  ];
+
+  currentStep = 0;
+
+  document.getElementById("steps").innerHTML =
+      steps.map((s,i)=>`<pre id="step-${i}">${s}</pre>`).join("");
+
+  document.getElementById("result").innerHTML =
+      "<strong>Output :</strong> Click Next to execute simulation step-by-step.";
+
+  document.querySelector(".start").disabled = true;
+  document.querySelector(".next").disabled = false;
+  document.querySelector(".reset").disabled = false;
+}
+
+function nextStep(){
+
+  if(currentStep >= steps.length){
+    alert("Simulation Completed");
+    return;
+  }
+
+  document.getElementById(`step-${currentStep-1}`)?.classList.remove("active");
+  document.getElementById(`step-${currentStep}`)?.classList.add("active");
+
+  let output = "<strong>Output :</strong><br>";
+
+  if(currentStep >= 0)
+      output += "<b>Class:</b> Student<br>";
+
+  if(currentStep >= 3)
+      output += "<b>Object:</b> s1 created<br>";
+
+  if(currentStep >= 4)
+      output += "<b>Data:</b> Rahul, Roll No = 101<br>";
+
+  if(currentStep >= 6)
+      output += "<br><b>Display Function Output:</b><br>Name = Rahul<br>Roll No = 101";
+
+  document.getElementById("result").innerHTML = output;
+
+  currentStep++;
+
+  if(currentStep >= steps.length)
+      document.querySelector(".next").disabled = true;
+}
+
+function resetSim(){
+
+  steps = [];
+  currentStep = 0;
+
+  document.getElementById("steps").innerHTML = "";
+
+  document.getElementById("result").innerHTML =
+      "<strong>Output :</strong> Click Start to begin the simulation.";
+
+  document.querySelector(".start").disabled = false;
+  document.querySelector(".next").disabled = true;
+  document.querySelector(".reset").disabled = true;
+}
+</script>
+
+</body>
+</html>
