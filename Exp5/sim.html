@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arrays in C++ Simulator</title>
+<link rel="stylesheet" href="simulation.css">
+
+<style>
+.array-container{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+.box{
+    width:60px;
+    height:60px;
+    border:2px solid #4a90e2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    border-radius:8px;
+    background:white;
+}
+.box.active{
+    background:#4a90e2;
+    color:white;
+}
+.index{
+    text-align:center;
+    font-size:12px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">Arrays in C++ Simulator</div>
+
+<div class="main-container">
+
+<div class="panel problem-panel">
+<div class="panel-header">Array Operations</div>
+
+<div class="panel-body">
+
+<input type="text" id="arrayInput" placeholder="10,20,30,40">
+
+<select id="operation">
+<option value="">Select Operation</option>
+<option value="traverse">Traversal</option>
+<option value="search">Linear Search</option>
+</select>
+
+<input type="number" id="searchKey" placeholder="Search Key">
+
+<div class="button-row">
+<button class="start" onclick="start()">Start</button>
+<button class="next" onclick="nextStep()">Next</button>
+<button class="reset" onclick="resetSim()">Reset</button>
+</div>
+
+</div>
+</div>
+
+<div class="panel step-panel">
+<div class="panel-header">Execution Steps</div>
+<div class="panel-body" id="steps"></div>
+</div>
+
+<div class="panel result-panel">
+<div class="panel-header">Array Visualization</div>
+<div class="panel-body">
+<div id="result"></div>
+</div>
+</div>
+
+</div>
+
+<script src="ssc.js"></script>
+
+</body>
+</html>
