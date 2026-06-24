@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SJF Scheduling Simulator</title>
+  <link rel="stylesheet" href="simulation.css">
+  <style>
+    .process-table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+    .process-table th, .process-table td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    .gantt { display: flex; margin-top: 10px; flex-wrap: wrap; }
+    .gantt-block { border: 1px solid #333; text-align: center; min-width: 40px; padding: 8px 4px; font-size: 12px; background: #5b9bd5; color: white; }
+    .gantt-time { font-size: 10px; color: #666; text-align: center; }
+    .metrics-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .metrics-table th, .metrics-table td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    #steps pre { margin: 4px 0; padding: 4px; font-size: 13px; }
+    #steps pre.active { background: lightyellow; border-left: 4px solid orange; }
+  </style>
+</head>
+<body>
+  <div class="header">String Handling in C++ Simulator</div>
+
+<div class="main-container">
+
+  <div class="panel problem-panel">
+    <div class="panel-header">String Operations</div>
+    <div class="panel-body">
+
+      <input type="text" id="inputString" placeholder="Enter a String">
+
+      <select id="operation">
+        <option value="">--Select Operation--</option>
+        <option value="length">Find Length</option>
+        <option value="uppercase">Convert to Uppercase</option>
+        <option value="lowercase">Convert to Lowercase</option>
+        <option value="reverse">Reverse String</option>
+        <option value="concat">Concatenate "_CPP"</option>
+      </select>
+
+      <div class="button-row">
+        <button class="start" onclick="start()">Start</button>
+        <button class="next" onclick="nextStep()">Next</button>
+        <button class="reset" onclick="resetSim()">Reset</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel step-panel">
+    <div class="panel-header">Step Execute</div>
+    <div class="panel-body" id="steps"></div>
+  </div>
+
+  <div class="panel result-panel">
+    <div class="panel-header">Output</div>
+    <div class="panel-body" id="result">
+      <strong>Output :</strong> Enter a string and click Start.
+    </div>
+  </div>
+
+</div>
+      </div>
+    </div>
+    <div class="panel step-panel"><div class="panel-header">Step Execute</div><div class="panel-body" id="steps"></div></div>
+    <div class="panel result-panel"><div class="panel-header">Result &amp; Gantt Chart</div><div class="panel-body" id="result"><strong>Output : </strong>Enter process details and click Start.</div></div>
+  </div>
+  <script src="ssc.js"></script>
+</body>
+</html>
+
