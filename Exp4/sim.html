@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Functions and Recursion in C++ Explorer</title>
+
+<link rel="stylesheet" href="simulation.css">
+
+<style>
+.layer{
+padding:14px;
+margin:8px 0;
+border:2px solid #6a5acd;
+border-radius:8px;
+text-align:center;
+transition:.3s;
+}
+
+.layer.active{
+background:#6a5acd;
+color:white;
+transform:scale(1.03);
+}
+
+#steps pre.active{
+background:#e6e6fa;
+border-left:5px solid #6a5acd;
+}
+
+.array-box{
+display:flex;
+justify-content:center;
+gap:8px;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
+.cell{
+width:60px;
+height:60px;
+line-height:60px;
+border:2px solid #6a5acd;
+font-weight:bold;
+border-radius:8px;
+background:white;
+}
+
+.cell.active{
+background:#6a5acd;
+color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Functions and Recursion in C++ Explorer
+</div>
+
+<div class="main-container">
+
+<div class="panel problem-panel">
+
+<div class="panel-header">
+Select Concept
+</div>
+
+<div class="panel-body">
+
+<select id="concept">
+<option value="">--Select Concept--</option>
+<option value="function">Function Call</option>
+<option value="recursion">Recursion (Factorial)</option>
+<option value="recursion_fib">Recursion (Fibonacci)</option>
+<option value="callstack">Call Stack Simulation</option>
+<option value="modular">Modular Programming</option>
+</select>
+
+<div class="button-row">
+<button class="start" onclick="start()">Start</button>
+<button class="next" onclick="nextStep()">Next</button>
+<button class="reset" onclick="resetSim()">Reset</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="panel step-panel">
+<div class="panel-header">
+Step Execution
+</div>
+
+<div class="panel-body" id="steps">
+</div>
+</div>
+
+<div class="panel result-panel">
+
+<div class="panel-header">
+Visualization
+</div>
+
+<div class="panel-body">
+
+<div class="layer" id="l-function">
+Function Execution
+</div>
+
+<div class="layer" id="l-recursion">
+Recursion Flow
+</div>
+
+<div class="layer" id="l-recursion_fib">
+Fibonacci Recursion Tree
+</div>
+
+<div class="layer" id="l-callstack">
+Call Stack Visualization
+</div>
+
+<div class="layer" id="l-modular">
+Modular Code Flow
+</div>
+
+<div class="array-box" id="visualBox">
+
+<div class="cell" id="c0">Main()</div>
+<div class="cell" id="c1">Func A</div>
+<div class="cell" id="c2">Func B</div>
+<div class="cell" id="c3">Return</div>
+<div class="cell" id="c4">Output</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="ssc.js"></script>
+
+</body>
+</html>
