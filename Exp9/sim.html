@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inheritance and Polymorphism in C++ Simulator</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    margin:20px;
+}
+
+h1{
+    text-align:center;
+    color:#2c3e50;
+}
+
+.section{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.controls{
+    text-align:center;
+    margin:15px 0;
+}
+
+button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    color:white;
+}
+
+.start{background:#28a745;}
+.next{background:#007bff;}
+.reset{background:#dc3545;}
+
+pre{
+    background:#f8f9fa;
+    padding:10px;
+    border-left:4px solid #ccc;
+    border-radius:5px;
+}
+
+.active{
+    border-left:4px solid #28a745;
+    background:#e8f5e9;
+}
+
+#result{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.class-box{
+    display:inline-block;
+    padding:15px;
+    margin:10px;
+    border:2px solid #007bff;
+    border-radius:8px;
+    min-width:120px;
+    text-align:center;
+}
+
+.arrow{
+    font-size:30px;
+    margin:0 10px;
+}
+
+.highlight{
+    background:#d4edda;
+    border-color:#28a745;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Inheritance and Polymorphism in C++ Simulator</h1>
+
+<div class="section">
+<h2>Simulation</h2>
+
+<div class="controls">
+<button class="start" onclick="start()">Start</button>
+<button class="next" onclick="nextStep()">Next</button>
+<button class="reset" onclick="resetSim()">Reset</button>
+</div>
+
+<div id="steps"></div>
+</div>
+
+<div id="result">
+<strong>Output :</strong> Click Start to begin the simulation.
+</div>
+
+<script src="ssc.js"></script>
+
+</body>
+</html>
